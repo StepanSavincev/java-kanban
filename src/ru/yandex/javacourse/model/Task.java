@@ -1,3 +1,5 @@
+package ru.yandex.javacourse.model;
+
 import java.util.Objects;
 
 public class Task {
@@ -61,11 +63,6 @@ public class Task {
                 && status == task.status;
     }
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
-
     @Override
     public int hashCode() {
         int hash = 17;
@@ -81,7 +78,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "ru.yandex.javacourse.model.Task{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", id=" + id +

@@ -1,7 +1,14 @@
+package ru.yandex.javacourse.Main;
+
+import ru.yandex.javacourse.model.Status;
+import ru.yandex.javacourse.service.TaskManager;
+import ru.yandex.javacourse.model.Epic;
+import ru.yandex.javacourse.model.Subtask;
+import ru.yandex.javacourse.model.Task;
+
 public class Main {
 
     public static void main(String[] args) {
-        //System.out.println("Поехали!");
 
         TaskManager taskManager = new TaskManager();
 

@@ -1,6 +1,8 @@
+package ru.yandex.javacourse.model;
+
 import java.util.ArrayList;
 
-public class Epic extends  Task{
+public class Epic extends Task {
 
     private ArrayList<Subtask> subtaskList = new ArrayList<>();
 
@@ -25,12 +27,12 @@ public class Epic extends  Task{
     }
 
     public void setSubtaskList(ArrayList<Subtask> subtasks) {
-        this.subtaskList = subtaskList;
+        this.subtaskList = subtasks;
     }
 
     @Override
     public String toString() {
-        return "Epic{" +
+        return "ru.yandex.javacourse.model.Epic{" +
                 "name='" + getName() + '\'' +
                 ", description='" + getDescription() + '\'' +
                 ", id=" + getId() +
