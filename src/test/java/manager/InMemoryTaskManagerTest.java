@@ -53,7 +53,6 @@ public class InMemoryTaskManagerTest {
         assertEquals(subtask, retrieved);
         assertEquals(epicId, retrieved.getEpicId());
 
-        // Проверяем, что подзадача добавлена в эпик
         Epic updatedEpic = taskManager.getEpic(epicId);
         assertTrue(updatedEpic.getSubtaskList().contains(subtask));
     }
@@ -96,7 +95,6 @@ public class InMemoryTaskManagerTest {
         Subtask retrieved = taskManager.getSubtask(subtaskId);
         assertEquals(updatedSubtask, retrieved);
 
-        // Проверяем, что эпик обновился
         Epic updatedEpic = taskManager.getEpic(epicId);
         assertTrue(updatedEpic.getSubtaskList().stream().anyMatch(st -> st.getId() == subtaskId));
     }
@@ -126,10 +124,8 @@ public class InMemoryTaskManagerTest {
         Subtask subtask = new Subtask("Subtask", "Desc", epicId);
         int subtaskId = taskManager.addNewSubtask(subtask);
 
-        // Сначала история пустая
         assertTrue(taskManager.getHistory().isEmpty());
 
-        // Просматриваем задачи
         taskManager.getTask(taskId);
         taskManager.getEpic(epicId);
         taskManager.getSubtask(subtaskId);
