@@ -37,10 +37,11 @@ public class Main {
 
         Task task1 = new Task("Task 1", "Desc 1");
         Epic epic1 = new Epic("Epic 1", "Epic Desc");
-        Subtask subtask1 = new Subtask("Subtask 1", "Subtask Desc", epic1.getId());
+        int epicId = manager.addNewEpic(epic1);
+        Subtask subtask1 = new Subtask("Subtask 1", "Subtask Desc", epicId);
 
         int taskId = manager.addNewTask(task1);
-        int epicId = manager.addNewEpic(epic1);
+        // int epicId = manager.addNewEpic(epic1);
         int subtaskId = manager.addNewSubtask(subtask1);
 
         manager.getTask(taskId);
