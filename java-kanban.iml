@@ -7,6 +7,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java/manager" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java/task" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/manager" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/out" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/out/production" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/out/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/src/test/task" />
     </content>
     <orderEntry type="inheritedJdk" />
