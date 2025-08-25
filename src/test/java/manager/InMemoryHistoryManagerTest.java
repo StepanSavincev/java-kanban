@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -41,6 +42,7 @@ class InMemoryHistoryManagerTest {
         assertEquals(1, history.size(), "Размер истории должен быть 1");
         assertEquals(task1, history.get(0), "Задача в истории должна совпадать с добавленной");
     }
+
     @Test
     @DisplayName("Добавление нескольких задач и проверка порядка")
     void should_AddMultipleTasks_AndPreserveOrder_Test() {
@@ -50,7 +52,7 @@ class InMemoryHistoryManagerTest {
 
         // then
         List<Task> history = historyManager.getHistory();
-        assertEquals(2, history.size(), "Размер истории должен быть 2");
+        Assertions.assertEquals(2, history.size(), "Размер истории должен быть 2");
         assertEquals(task1, history.get(0), "Первая задача должна быть первой добавленной");
         assertEquals(task2, history.get(1), "Вторая задача должна быть второй добавленной");
     }
@@ -67,7 +69,7 @@ class InMemoryHistoryManagerTest {
         List<Task> history = historyManager.getHistory();
 
         // then
-        assertEquals(MAX_HISTORY_SIZE, history.size(), "Размер истории не должен превышать 10 задач");
+        Assertions.assertEquals(MAX_HISTORY_SIZE, history.size(), "Размер истории не должен превышать 10 задач");
     }
 
     @Test
@@ -80,5 +82,38 @@ class InMemoryHistoryManagerTest {
 
         // then
         assertNotSame(history1, history2, "Метод getHistory должен возвращать новый список");
+    }
+
+    @Test
+    @DisplayName("Добавление повторной задачи перемещает ее в конец истории без дубликатов")
+    void addTaskAgain_movesToEnd_noDuplicates() {
+        historyManager.add(task1);
+        historyManager.add(task2);
+        historyManager.add(task1); // повторно добавляем task1
+
+        List<Task> history = historyManager.getHistory();
+        assertEquals(2, history.size(), "В истории не должно быть дубликатов");
+        assertEquals(task2, history.get(0), "Первая задача должна быть task2");
+        assertEquals(task1, history.get(1), "Вторая задача должна быть task1");
+    }
+
+    @Test
+    @DisplayName("Удаление задачи из истории работает корректно")
+    void removeTask_removesFromHistory() {
+        historyManager.add(task1);
+        historyManager.add(task2);
+
+        historyManager.remove(task1.getId());
+
+        List<Task> history = historyManager.getHistory();
+        assertEquals(1, history.size());
+        assertEquals(task2, history.get(0), "В истории осталась только task2");
+    }
+
+    @Test
+    @DisplayName("Удаление несуществующего id не вызывает ошибок")
+    void removeNonExistentId_noError() {
+        historyManager.add(task1);
+        assertDoesNotThrow(() -> historyManager.remove(9999));
     }
 }
