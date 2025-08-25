@@ -39,7 +39,7 @@ class InMemoryHistoryManagerTest {
 
         assertNotNull(history, "После добавления задачи, история не должна быть пустой.");
         assertEquals(1, history.size(), "Размер истории должен быть 1");
-        assertEquals(task1, history.get(0), "Задача в истории должна совпадать с добавленной");
+        assertEquals(task1, history.getFirst(), "Задача в истории должна совпадать с добавленной");
     }
 
     @Test
@@ -106,7 +106,7 @@ class InMemoryHistoryManagerTest {
 
         List<Task> history = historyManager.getHistory();
         assertEquals(1, history.size());
-        assertEquals(task2, history.get(0), "В истории осталась только task2");
+        assertEquals(task2, history.getFirst(), "В истории осталась только task2");
     }
 
     @Test
