@@ -86,7 +86,7 @@ class InMemoryHistoryManagerTest {
     void addTaskAgain_movesToEnd_noDuplicates() {
         historyManager.add(task1);
         historyManager.add(task2);
-        historyManager.add(task1); // повторно добавляем task1
+        historyManager.add(task1);
 
         List<Task> history = historyManager.getHistory();
         assertEquals(2, history.size(), "В истории не должно быть дубликатов");

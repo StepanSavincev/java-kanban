@@ -18,17 +18,12 @@ public class InMemoryHistoryManager implements HistoryManager {
         }
     }
 
-    // Карта id задачи -> узел связного списка
     private final Map<Integer, Node> nodeMap = new HashMap<>();
 
-    // Голова и хвост связного списка
     private Node head;
     private Node tail;
 
-    // === Новый код ===
-    /**
-     * Метод добавляет узел в конец связного списка
-     */
+    // Метод добавляет узел в конец связного списка
     private void linkLast(Node node) {
         if (tail == null) {
             head = node;
@@ -40,10 +35,7 @@ public class InMemoryHistoryManager implements HistoryManager {
         }
     }
 
-    // === Новый код ===
-    /**
-     * Удаление узла из связного списка за O(1)
-     */
+    // Удаление узла из связного списка за O(1)
     private void removeNode(Node node) {
         if (node == null) return;
 
@@ -69,7 +61,6 @@ public class InMemoryHistoryManager implements HistoryManager {
 
         int id = task.getId();
 
-        // === Новый код ===
         // Если задача уже есть в истории — удаляем старый узел
         if (nodeMap.containsKey(id)) {
             removeNode(nodeMap.get(id));
@@ -82,10 +73,7 @@ public class InMemoryHistoryManager implements HistoryManager {
         nodeMap.put(id, newNode);
     }
 
-    // === Новый код ===
-    /**
-     * Удаляет задачу из истории по id
-     */
+    //Удаляет задачу из истории по id
     @Override
     public void remove(int id) {
         Node node = nodeMap.get(id);
