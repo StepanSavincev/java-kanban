@@ -5,7 +5,7 @@ import main.java.ru.yandex.javacourse.model.Subtask;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EpicTest {
+public class EpicTest {
 
     @Test
     void epicsWithSameIdAreEqual() {
