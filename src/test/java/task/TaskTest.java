@@ -3,7 +3,7 @@ import ru.yandex.javacourse.model.Status;
 import ru.yandex.javacourse.model.Task;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.testng.Assert.assertEquals;
+//import static org.testng.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class TaskTest {
