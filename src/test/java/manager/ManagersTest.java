@@ -1,9 +1,10 @@
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 import ru.yandex.javacourse.manager.HistoryManager;
 import ru.yandex.javacourse.manager.Managers;
 import ru.yandex.javacourse.manager.TaskManager;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class ManagersTest {
 
