@@ -41,6 +41,7 @@ class InMemoryHistoryManagerTest {
         assertEquals(1, history.size(), "Размер истории должен быть 1");
         assertEquals(task1, history.get(0), "Задача в истории должна совпадать с добавленной");
     }
+
     @Test
     @DisplayName("Добавление нескольких задач и проверка порядка")
     void should_AddMultipleTasks_AndPreserveOrder_Test() {
@@ -81,6 +82,7 @@ class InMemoryHistoryManagerTest {
         // then
         assertNotSame(history1, history2, "Метод getHistory должен возвращать новый список");
     }
+
     @Test
     @DisplayName("Добавление повторной задачи перемещает ее в конец истории без дубликатов")
     void addTaskAgain_movesToEnd_noDuplicates() {
