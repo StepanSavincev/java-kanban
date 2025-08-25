@@ -1,6 +1,6 @@
 //import org.testng.annotations.Test;
-import ru.yandex.javacourse.model.Status;
-import ru.yandex.javacourse.model.Task;
+import main.java.ru.yandex.javacourse.model.Status;
+import main.java.ru.yandex.javacourse.model.Task;
 
 import static org.junit.jupiter.api.Assertions.*;
 //import static org.testng.Assert.assertEquals;

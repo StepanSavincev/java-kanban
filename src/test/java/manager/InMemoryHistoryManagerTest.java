@@ -1,10 +1,10 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.yandex.javacourse.model.Task;
-import ru.yandex.javacourse.model.Status;
-import ru.yandex.javacourse.manager.InMemoryHistoryManager;
-import ru.yandex.javacourse.manager.HistoryManager;
+import main.java.ru.yandex.javacourse.model.Task;
+import main.java.ru.yandex.javacourse.model.Status;
+import main.java.ru.yandex.javacourse.manager.InMemoryHistoryManager;
+import main.java.ru.yandex.javacourse.manager.HistoryManager;
 
 import java.util.List;
 

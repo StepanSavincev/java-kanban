@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.yandex.javacourse.manager.TaskManager;
-import ru.yandex.javacourse.model.Epic;
-import ru.yandex.javacourse.model.Status;
-import ru.yandex.javacourse.model.Subtask;
-import ru.yandex.javacourse.model.Task;
-import ru.yandex.javacourse.manager.InMemoryTaskManager;
+import main.java.ru.yandex.javacourse.manager.TaskManager;
+import main.java.ru.yandex.javacourse.model.Epic;
+import main.java.ru.yandex.javacourse.model.Status;
+import main.java.ru.yandex.javacourse.model.Subtask;
+import main.java.ru.yandex.javacourse.model.Task;
+import main.java.ru.yandex.javacourse.manager.InMemoryTaskManager;
 
 import java.util.List;
 

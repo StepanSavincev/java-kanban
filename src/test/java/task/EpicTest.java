@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
-import ru.yandex.javacourse.model.Epic;
-import ru.yandex.javacourse.model.Status;
-import ru.yandex.javacourse.model.Subtask;
+import main.java.ru.yandex.javacourse.model.Epic;
+import main.java.ru.yandex.javacourse.model.Status;
+import main.java.ru.yandex.javacourse.model.Subtask;
 
 import static org.junit.jupiter.api.Assertions.*;
 
